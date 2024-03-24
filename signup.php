@@ -150,7 +150,7 @@ if(isset($_POST['submit'])) // Check if the form is submitted
    $fullname = $_POST['fullname']; // Change the variable name to match the HTML input field name
    $email = $_POST['email']; // Change email_POST to email
    $pwd = $_POST['password']; // Change pwd_POST to password
-   $query = "INSERT INTO signup (fullname, email, password) VALUES ('$fullname','$email','$pwd')"; // Corrected query
+   $query = "INSERT INTO signup  (fullname, email, password) VALUES ('$fullname','$email','$pwd')"; // Corrected query
    $data = mysqli_query($conn, $query);
 
    if($data)
@@ -163,6 +163,11 @@ if(isset($_POST['submit'])) // Check if the form is submitted
    }
 }
 ?>
+
+
+
+
+
 
 
 
