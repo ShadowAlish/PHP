@@ -67,6 +67,7 @@
         <h2>User Data</h2>
         <table>
             <tr>
+                <th>ID</th> <!-- Add the ID column -->
                 <th>Full Name</th>
                 <th>Email</th>
                 <th>Password</th>
@@ -88,11 +89,13 @@
                     // Loop through each row of data
                     while ($row = mysqli_fetch_assoc($result)) {
                         // Access each column value using the column name
+                        $id = $row['id']; // Get ID
                         $fullname = $row['fullname'];
                         $email = $row['email'];
                         $password = $row['password'];
                         // Display the data in a table row
                         echo "<tr>";
+                        echo "<td>$id</td>"; // Display ID
                         echo "<td>$fullname</td>";
                         echo "<td>$email</td>";
                         echo "<td>$password</td>";
@@ -100,11 +103,11 @@
                     }
                 } else {
                     // If no rows are returned
-                    echo "<tr><td colspan='3'>No records found</td></tr>";
+                    echo "<tr><td colspan='4'>No records found</td></tr>";
                 }
             } else {
                 // If the query execution fails
-                echo "<tr><td colspan='3'>Error: " . mysqli_error($conn) . "</td></tr>";
+                echo "<tr><td colspan='4'>Error: " . mysqli_error($conn) . "</td></tr>";
             }
 
             // Close the database connection
@@ -117,3 +120,4 @@
     </div>
 </body>
 </html>
+
